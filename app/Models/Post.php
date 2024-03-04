@@ -13,4 +13,9 @@ class Post extends Model
     {
         return $this->belongsToMany(Tag::class)->withTimestamps();
     }
+
+    public function thumbnail(): \Illuminate\Database\Eloquent\Relations\MorphMany
+    {
+        return $this->morphMany(Photo::class, 'photoable');
+    }
 }

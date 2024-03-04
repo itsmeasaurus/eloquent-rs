@@ -63,4 +63,9 @@ class User extends Authenticatable
         return $this->belongsTo(Affiliation::class);
     }
 
+    public function photo()
+    {
+        return $this->morphMany(Photo::class, 'photoable');
+    }
+
 }
